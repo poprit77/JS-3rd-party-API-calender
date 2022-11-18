@@ -1,6 +1,29 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+// var description = document.querySelector("#description");
+// var saveButton = document.getElementsByClassName('saveBtn');
+
+// saveButton.addEventListener("click", function(event) {
+//   event.preventDefault();
+
+// var storage1 = {
+//   description: description.value
+// };
+
+// localStorage.setItem("storage1", JSON.stringify(storage1));
+// var msgData = JSON.parse(localStorage.getItem("#description"));
+// save.textContent = save.firstName
+
+// });
+var time = dayjs().format('MMMM  dddd the DD');
+$('#currentDay').text(time);
+ 
+var hour = dayjs().format('HH');
+if (hour > 9){
+  document.getElementById('#9').style.backgroundColor = 'red';
+}
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in

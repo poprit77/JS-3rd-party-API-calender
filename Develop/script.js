@@ -1,8 +1,8 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-// var description = document.querySelector("#description");
-// var saveButton = document.getElementsByClassName('saveBtn');
+// // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
+// // the code isn't run until the browser has finished rendering all the elements
+// // in the html.
+var description = document.querySelector("#description");
+var saveButton = document.getElementsByClassName('#saveBtn');
 
 // saveButton.addEventListener("click", function(event) {
 //   event.preventDefault();
@@ -10,19 +10,18 @@
 // var storage1 = {
 //   description: description.value
 // };
-
+// console.log(storage1)
 // localStorage.setItem("storage1", JSON.stringify(storage1));
 // var msgData = JSON.parse(localStorage.getItem("#description"));
 // save.textContent = save.firstName
 
 // });
-var time = dayjs().format('MMMM  dddd the DD');
-$('#currentDay').text(time);
- 
-var hour = dayjs().format('HH');
-if (hour > 9){
-  document.getElementById('#9').style.backgroundColor = 'red';
-}
+
+
+//sets and splays current time 
+var time1 = dayjs().format('MMMM  dddd ');
+var time2 = dayjs().format('DD ');
+$('#currentDay').text(time1 + "the " + time2);
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -44,3 +43,63 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+//Controls time blocks background color with cascading if loop
+$(document).ready(readyFn);
+function readyFn(jQuery) {
+  var hour = dayjs().format('HH');
+  if (hour < 9) {
+    $('#9').css({ 'background-color': '#77dd77' });
+  } if (hour === 9) {
+    $('#9').css({ 'background-color': '#ff6961' });
+  } if (hour > 9) {
+    $('#9').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 10) {
+    $('#10').css({ 'background-color': '#77dd77' });
+  } if (hour === 10) {
+    $('#10').css({ 'background-color': '#ff6961' });
+  } if (hour > 10) {
+    $('#10').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 11) {
+    $('#11').css({ 'background-color': '#77dd77' });
+  } if (hour === 11) {
+    $('#11').css({ 'background-color': '#ff6961' });
+  } if (hour > 11) {
+    $('#11').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 12) {
+    $('#12').css({ 'background-color': '#77dd77' });
+  } if (hour === 12) {
+    $('#12').css({ 'background-color': '#ff6961' });
+  } if (hour > 12) {
+    $('#12').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 13) {
+    $('#13').css({ 'background-color': '#77dd77' });
+  } if (hour === 13) {
+    $('#13').css({ 'background-color': '#ff6961' });
+  } if (hour > 13) {
+    $('#13').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 14) {
+    $('#14').css({ 'background-color': '#77dd77' });
+  } if (hour === 14) {
+    $('#14').css({ 'background-color': '#ff6961' });
+  } if (hour > 14) {
+    $('#14').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 15) {
+    $('#15').css({ 'background-color': '#77dd77' });
+  } if (hour === 15) {
+    $('#15').css({ 'background-color': '#ff6961' });
+  } if (hour > 15) {
+    $('#15').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 16) {
+    $('#16').css({ 'background-color': '#77dd77' });
+  } if (hour === 16) {
+    $('#16').css({ 'background-color': '#ff6961' });
+  } if (hour > 16) {
+    $('#16').css({ 'background-color': '#d3d3d3' });
+  } if (hour < 17) {
+    $('#17').css({ 'background-color': '#77dd77' });
+  } if (hour === 17) {
+    $('#17').css({ 'background-color': '#ff6961' });
+  } if (hour > 17) {
+    $('#17').css({ 'background-color': '#d3d3d3' });
+  }
+}

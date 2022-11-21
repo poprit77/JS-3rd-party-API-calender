@@ -1,4 +1,4 @@
-
+//variables linked to each hour cell
 var description1 = document.getElementById("91");
 var description2 = document.getElementById("101");
 var description3 = document.getElementById("111");
@@ -9,22 +9,26 @@ var description7 = document.getElementById("151");
 var description8 = document.getElementById("161");
 var description9 = document.getElementById("171");
 var saveButton = document.getElementsByClassName('saveBtn');
+//calls functions upon clicking save button
 saveButton[0].addEventListener("click", function (event) {
   event.preventDefault();
   savethis();
 });
+//saves tecxt to local storage
 function savethis() {
   var storage1 = {
     description1: description1.value
   };
   localStorage.setItem("storage1", JSON.stringify(storage1));
 }
+//retrieves text from localStorage
 function renderLastGrade() {
   var storage1 = JSON.parse(localStorage.getItem("storage1"));
   if (storage1 !== null) {
     description1.textContent = storage1.description1;
   }
 };
+//repeat same code for  each cell
 saveButton[1].addEventListener("click", function (event) {
   event.preventDefault();
   savethis1();
@@ -166,7 +170,7 @@ function renderLastGrade8() {
 var time1 = dayjs().format('MMMM  dddd ');
 var time2 = dayjs().format('DD ');
 $('#currentDay').text(time1 + "the " + time2);
-
+//changes background color of each cell based on time
 $(document).ready(readyFn);
 function readyFn(jQuery) {
   var hour = dayjs().format('HH');
@@ -226,6 +230,7 @@ function readyFn(jQuery) {
     $('#17').css({ 'background-color': '#d3d3d3' });
   }
 }
+//renders each cells data upon loading page
 renderLastGrade();
 renderLastGrade1();
 renderLastGrade2();

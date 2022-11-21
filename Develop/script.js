@@ -15,14 +15,14 @@ saveButton[0].addEventListener("click", function (event) {
 });
 function savethis() {
   var storage1 = {
-    description1: description.value
+    description1: description1.value
   };
   localStorage.setItem("storage1", JSON.stringify(storage1));
 }
 function renderLastGrade() {
   var storage1 = JSON.parse(localStorage.getItem("storage1"));
   if (storage1 !== null) {
-    description1.textContent = storage1.description;
+    description1.textContent = storage1.description1;
   }
 };
 saveButton[1].addEventListener("click", function (event) {
